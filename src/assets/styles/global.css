@@ -1,0 +1,121 @@
+@font-face {
+  font-family: "GoogleSans";
+  src: url("/src/assets/fonts/GoogleSansTTF/GoogleSans-Bold.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GoogleSans";
+  src: url("/src/assets/fonts/GoogleSansTTF/GoogleSans-Medium.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GoogleSans";
+  src: url("/src/assets/fonts/GoogleSansTTF/GoogleSans-Regular.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  font-family: GoogleSans, sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+  color: #212529;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input:focus {
+  outline: none;
+}
+
+select:focus {
+  outline: none;
+}
+
+.gradient {
+  position: relative;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+  transition-property: all;
+
+  background: linear-gradient(to right, #4285f4, #4285f4, #ea4335);
+}
+
+.gradient:hover {
+  background: linear-gradient(to bottom right, #4285f4, #9f6cd4, #ea4335);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+}
+
+.gradient::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, #4285f4, #4285f4, #ea4335) border-box;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  z-index: -1;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInTop {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-right {
+  animation: fadeInRight 1s ease-out forwards;
+}
+
+.fade-in-top {
+  animation: fadeInTop 1s ease-out forwards;
+}
+@media (min-width: 1280px) and (max-width: 1435px) {
+  .grecaptcha-badge {
+    visibility: hidden !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .grecaptcha-badge {
+    visibility: hidden !important;
+  }
+}
